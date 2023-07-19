@@ -1,4 +1,4 @@
-#include "hermit_cubic_interpolation.h"
+#include "hermite_cubic_interpolation.h"
 
 /**
  * Вычислить первые производные в опорных точках методом трёхточечной разности
@@ -7,7 +7,7 @@
  * @param y_ptr - указатель на y - координаты
  * @param size_t - количество опорных точек траектории
 */
-void HermitCubicInterpolation::calculateDY(
+void HermiteCubicInterpolation::calculateDY(
         std::vector<double> &dy, const double *x_ptr, const double *y_ptr, const size_t size
 )  {
     // рассчитываем dy методом трёхточечной разности

@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 14)
 
 enable_testing()
 
-add_subdirectory(hermit)
-include_directories(hermit/include)
+add_subdirectory(hermite)
+include_directories(hermite/include)
 
 # add_subdirectory(app)

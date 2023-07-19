@@ -9,7 +9,7 @@
  * Класс кубической интерполяции Эрмита, скорости
  * в опорных точках рассчитываются методом трёхточечной разности
  */
-class HermitCubicInterpolation : public CubicInterpolation {
+class HermiteCubicInterpolation : public CubicInterpolation {
 public:
 
     /**
@@ -18,7 +18,7 @@ public:
      * @param y_ptr - указатель на y - координаты
      * @param size_t - количество опорных точек траектории
      */
-    HermitCubicInterpolation(const double *x_ptr, const double *y_ptr, const size_t size) {
+    HermiteCubicInterpolation(const double *x_ptr, const double *y_ptr, const size_t size) {
         std::vector<double> dy(size, 0);
         calculateDY(dy, x_ptr, y_ptr, size);
         _spline = std::make_shared<CubicHermiteSpline>(x_ptr, y_ptr, dy.data(), size);

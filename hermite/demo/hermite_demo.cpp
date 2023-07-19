@@ -3,7 +3,7 @@
 #include <fstream>
 #include "base/misc.h"
 #include "monotone_cubic_interpolation.h"
-#include "hermit_cubic_interpolation.h"
+#include "hermite_cubic_interpolation.h"
 
 
 int main(int argc, char *argv[]) {
@@ -46,13 +46,13 @@ int main(int argc, char *argv[]) {
                << monotoneInterpolation.getSpline()->getDY().at(i) << "\n";
 
     // строим обычный интерполятор
-    HermitCubicInterpolation hermitCubicInterpolation(x.data(), y.data(), x.size());
+    HermiteCubicInterpolation hermitCubicInterpolation(x.data(), y.data(), x.size());
 
     // выводим в файл интерполированные значения функции с аргументами от нуля до последнего x
     // с равным шагом, количество значений задаётся в переменной nPoints
     // для каждого аргумента построчно выводятся сам аргумент, значение функции в точке
     // и первые три производных
-    std::ofstream fileOut2("../../data/cubic/test-hermit.out");
+    std::ofstream fileOut2("../../data/cubic/test-hermite.out");
     for (int i = 0; i <= nPoints; ++i) {
         auto xVal = x.back() * i / static_cast<double>(nPoints);
         fileOut2 << xVal << " " << hermitCubicInterpolation.getInterpolatedValue(xVal) << " "
@@ -62,7 +62,7 @@ int main(int argc, char *argv[]) {
     }
 
     // во второй файл выводятся опорные точки интерполяции: x, f(x), f'(x)
-    std::ofstream fileIn2("../../data/cubic/test-hermit.in");
+    std::ofstream fileIn2("../../data/cubic/test-hermite.in");
     for (int i = 0; i < x.size(); ++i)
         fileIn2 << x.at(i) << " " << y.at(i) << " "
                 << hermitCubicInterpolation.getSpline()->getDY().at(i) << "\n";

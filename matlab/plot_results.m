@@ -5,8 +5,8 @@ inputMonotoneData = dlmread('../data/cubic/test-monotone.in');
 outputMonotoneData = dlmread('../data/cubic/test-monotone.out');
 
 
-inputHermitData = dlmread('../data/cubic/test-hermit.in');
-outputHermitData = dlmread('../data/cubic/test-hermit.out');
+inputHermitData = dlmread('../data/cubic/test-hermite.in');
+outputHermitData = dlmread('../data/cubic/test-hermite.out');
 
 
 f_my_plot(outputMonotoneData(:,1), ...

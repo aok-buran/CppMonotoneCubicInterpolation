@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.21)
-project(MonotoneHermitApp)
+project(MonotoneCubicInterpolationApp)
 
 
 set(CMAKE_CXX_STANDARD 14)
@@ -17,14 +17,14 @@ add_library(
         src/monotone_cubic_interpolation.cpp
         include/monotone_cubic_interpolation.h
         include/base/cubic_interpolation.h
-        src/hermit_cubic_interpolation.cpp
-        include/hermit_cubic_interpolation.h
+        src/hermite_cubic_interpolation.cpp
+        include/hermite_cubic_interpolation.h
         include/base/misc.h
 )
 
 add_executable(
         HermitDemo
-        demo/hermit_demo.cpp
+        demo/hermite_demo.cpp
 
         src/base/cubic_hermite_spline.cpp
 
@@ -34,8 +34,8 @@ add_executable(
         src/monotone_cubic_interpolation.cpp
         include/monotone_cubic_interpolation.h
 
-        src/hermit_cubic_interpolation.cpp
-        include/hermit_cubic_interpolation.h
+        src/hermite_cubic_interpolation.cpp
+        include/hermite_cubic_interpolation.h
 
         include/base/misc.h
 )
