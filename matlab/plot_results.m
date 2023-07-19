@@ -1,0 +1,26 @@
+close all;
+clear all;
+
+inputMonotoneData = dlmread('../data/cubic/test-monotone.in');
+outputMonotoneData = dlmread('../data/cubic/test-monotone.out');
+
+
+inputHermitData = dlmread('../data/cubic/test-hermit.in');
+outputHermitData = dlmread('../data/cubic/test-hermit.out');
+
+
+f_my_plot(outputMonotoneData(:,1), ...
+    [outputMonotoneData(:,2),outputMonotoneData(:,3),outputMonotoneData(:,4)], ...
+    inputMonotoneData(:,1),inputMonotoneData(:,2), ...
+    {'$p(x)$','$v(x)$','$a(x)$','$x_k$','$dx_k$/dt','$d^2x_k$/dt'}, ...
+    'out/test.png', 'southwest',"Монотонная интерполяция","аргумент","значение");
+
+
+
+f_my_plot(outputMonotoneData(:,1), ...
+    [outputMonotoneData(:,2),outputHermitData(:,2)], ...
+    inputMonotoneData(:,1),inputMonotoneData(:,2), ...
+    {'$p_m(x)$','$p_h(x)$','$x_k^*$'}, ...
+    'out/test2.png', 'southwest',"Сравнение интерполяций","аргумент","значение");
+
+
