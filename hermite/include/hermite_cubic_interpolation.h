@@ -16,7 +16,7 @@ public:
      * Конструктор
      * @param x_ptr - указатель на x - координаты
      * @param y_ptr - указатель на y - координаты
-     * @param size_t - количество опорных точек траектории
+     * @param size - количество опорных точек траектории
      */
     HermiteCubicInterpolation(const double *x_ptr, const double *y_ptr, const size_t size) {
         std::vector<double> dy(size, 0);
@@ -30,7 +30,7 @@ private:
      * @param dy - вектор, в который нужно записать первые производные
      * @param x_ptr - указатель на x - координаты
      * @param y_ptr - указатель на y - координаты
-     * @param size_t - количество опорных точек траектории
+     * @param size - количество опорных точек траектории
      */
     static void calculateDY(std::vector<double> &dy, const double *x_ptr, const double *y_ptr, size_t size);
 

@@ -15,7 +15,7 @@ public:
      * Конструктор
      * @param x_ptr - указатель на x - координаты
      * @param y_ptr - указатель на y - координаты
-     * @param size_t - количество опорных точек траектории
+     * @param size - количество опорных точек траектории
      */
     CubicHermiteSpline(const double *x_ptr, const double *y_ptr, const double *m_ptr, const size_t size) :
             _x(x_ptr, x_ptr + size),
